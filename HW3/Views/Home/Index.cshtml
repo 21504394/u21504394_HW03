@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    
+    <h2>MyMedia</h2>
+    <h4>Upload</h4>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <h1>Description</h1>
+                <p>You may choose a file to upload </p>
+            </div>
+            <div class="col-sm-4">
+
+                <h1>Option selection</h1>
+                <input type="radio" name="radiobtn" value="Videos" id="image" />Video
+                <br />
+                <input type="radio" name="radiobtn" value="Images" id="image" />Image
+                <br />
+                <input type="radio" name="radiobtn" value="Documents" id="document" />Document
+                <br />
+                <input type="file" name="files" />
+                <br />
+                <input type="submit" name="button" value="Upload" />
+                @*folder with name should be the sam as the value in these*@ 
+
+
+
+            </div>
+        </div>
+    </div>
+}
+@{
+
+
+}
+
+
+
+
+

@@ -1,0 +1,45 @@
+﻿@*there are many files in modal and the for loop loops through each file*@
+@model IEnumerable<HW3.Models.FileModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Images of any file type</h2>
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4">
+                <div class="card " style="width:30rem;">
+                    <a class="fancy-Box" href="~/Media/Images/@item.FileName"><img height="200" width="300" src="~/Media/Images/@item.FileName" alt="" /></a>
+
+                    <p>@item.FileName</p>
+                    <button type="button" class="btn btn-success">@Html.ActionLink("Download", "Download", new { item.FileName })</button>
+                    <button type="button" class="btn btn-danger"> @Html.ActionLink("Delete", "Delete", new { item.FileName })</button>
+
+                </div>
+
+            </div>
+
+        }
+
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    console.log("fancy-Box")
+    $(document).ready(function () {
+        $(".fancy-Box").fancybox();
+    });
+</script>
+
+@*@Html.ActionLink("Download", "Download", new { item.FileName }) |
+    @Html.ActionLink("Delete", "Delete", new { item.FileName })
+    <a id="single_image" href="image_big.jpg"><img src="image_small.jpg" alt="" /></a>
+    @Html.DisplayFor(modelItem => item.FileName)*@
+
+
